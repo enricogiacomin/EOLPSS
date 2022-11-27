@@ -16,7 +16,5 @@ ForEach ($Plan in $MbxPlans) {
         }
     }
 }
-#End
-ForEach $Report | Group Plan | Format-Table Name, Count
-
-Get-EXOMailbox -Filter 
+#End ForEach
+$Report | Group-Object Plan | Format-Table Name, Count
