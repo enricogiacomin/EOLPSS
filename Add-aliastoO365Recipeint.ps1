@@ -1,3 +1,8 @@
+$Modules = Get-Module
+If ("ExchangeOnlineManagement" -notin $Modules.Name) {
+    Write-Host "Please connect to Exchange Online Management before continuing...";break
+}
+
 Start-Transcript C:\AGG\aliasadd.txt
 $alias = Get-Recipient -Filter { company -eq 'Lucchini LBX' } | Select-Object -Property alias, primarysmtpaddress
 foreach ($a in $alias) {
