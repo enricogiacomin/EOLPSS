@@ -12,4 +12,3 @@ foreach ($a in $alias) {
     Set-Mailbox $a.alias -EmailAddresses @{Add = "$addr" }
 }
 stop-Transcript
-break
