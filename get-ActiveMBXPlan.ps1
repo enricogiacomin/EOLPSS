@@ -1,3 +1,9 @@
+$Modules = Get-Module
+If ("ExchangeOnlineManagement" -notin $Modules.Name) {
+    Write-Host "Please connect to Exchange Online Management before continuing..."
+    break
+}
+
 $Report = [System.Collections.Generic.List[Object]]::new()
 $MbxPlans = Get-MailboxPlan
 ForEach ($Plan in $MbxPlans) { 
